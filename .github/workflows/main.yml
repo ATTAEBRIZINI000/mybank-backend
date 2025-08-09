@@ -13,9 +13,9 @@ jobs:
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Build The Services
-      run: docker build -t laouniabderrazzaq/bankback .
+      run: docker build -t attaebrizini000/mybank-backend .
     - name: Push to docker hub
-      run: docker push laouniabderrazzaq/bankback:latest
+      run: docker push attaebrizini000/mybank-backend:latest
   deploy:
     needs: build
     runs-on: self-hosted
@@ -27,8 +27,8 @@ jobs:
     - name: Remove Container
       run: docker rm bankback || true
     - name: Remove Image
-      run: docker rmi laouniabderrazzaq/bankback:latest || true
+      run: docker rmi attaebrizini000/mybank-backend:latest || true
     - name: Pull Image
-      run: docker pull laouniabderrazzaq/bankback:latest
+      run: docker pull attaebrizini000/mybank-backend:latest
     - name: Run Container
-      run: docker run --restart unless-stopped -d --name bankback -p 8000:80 laouniabderrazzaq/bankback:latest
+      run: docker run --restart unless-stopped -d --name bankback -p 8000:80 attaebrizini000/mybank-backend:latest
