@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+<<<<<<< HEAD
+vendor/
+=======
+vendor/
+env
+var/
+>>>>>>> dev
