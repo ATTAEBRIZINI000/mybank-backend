@@ -39,7 +39,7 @@ final class UserController extends AbstractController
                 'date' => $category->getDate()
             ];
         }
-
+        dd($data);
         return $this->json($data);
     }
     #[Route('/api/user/opertaions', name: 'get_operations', methods: ['GET'])]
@@ -63,7 +63,7 @@ final class UserController extends AbstractController
                 'date' => $operation->getDate()
             ];
         }
-
+        
         return $this->json($data);
     }
     #[Route('/api/expenses/last-month', name: 'get_last_month_expenses', methods: ['GET'])]
